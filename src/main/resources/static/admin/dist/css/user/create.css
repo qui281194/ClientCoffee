@@ -1,0 +1,453 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 14, 2024, 1:32:58 PM
+    Author     : ASUS
+*/
+.container-fluid {
+                padding: 20px;
+            }
+
+            .white-box {
+                background-color: #ffffff;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                width: 100%;
+                margin: auto;
+                width: 60%; /* Adjusted the width for better visibility */
+            }
+
+            form {
+                margin-top: 20px;
+            }
+
+            /* Style the form elements as needed */
+            form label {
+                display: block;
+                margin-top: 10px;
+            }
+
+            form input,
+            form textarea,
+            form select {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd; /* Added border for better visibility */
+                border-radius: 4px;
+            }
+
+            button {
+                padding: 12px 20px;
+                background-color: #007BFF;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            /* Add additional styles as needed */
+
+            .form-container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .form-half {
+                padding: 0 15px;
+                width: 48%;
+            }
+
+            /* Optional: Add some padding and margin for better spacing */
+            .form-container label,
+            .form-container input,
+            .form-container select,
+            .form-container textarea {
+                margin-bottom: 15px;
+            }
+
+            .form-container textarea {
+                height: 120px;
+            }
+
+            /* Style the back button */
+            .btn {
+                padding: 12px 20px;
+
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                display: inline-block;
+            }
+
+            .btn:hover {
+                background-color: #75E4C4;
+            }
+            h2.box-title {
+                color: #4CAF50;
+            }
+            form label[for="name"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#name {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#name:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="status"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#status {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#status:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="phone"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#phone {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#phone:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="password"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#password {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#password:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="address"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#address {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#address:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="role"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#role {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#role:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="birthday"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#birthday {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#birthday:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="gender"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#gender {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#gender:focus {
+                border-color: #007BFF;
+            }
+            /**/
+            form label[for="email"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#email {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#email:focus {
+                border-color: #007BFF;
+            }
+            
+            form label[for="price"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#price {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#price:focus {
+                border-color: #007BFF;
+            }
+            form label[for="description"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#description {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#description:focus {
+                border-color: #007BFF;
+            }
+            /*hết*/
+            form label[for="category"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#category {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#category:focus {
+                border-color: #007BFF;
+            }
+            form label[for="quantity"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#quantity {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#quantity:focus {
+                border-color: #007BFF;
+            }
+            form label[for="serviceDuration"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #007BFF;
+            }
+
+            /* Style the "Name" input */
+            form input#serviceDuration {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#serviceDuration:focus {
+                border-color: #007BFF;
+            }
+            form label[for="image"] {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #8dfcaf;
+            }
+
+            /* Style the "Name" input */
+            form input#image {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                transition: border-color 0.3s;
+            }
+
+            /* Add a transition effect on input focus for a smoother interaction */
+            form input#image:focus {
+                border-color: #8dfcaf;
+            }
+             body {
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }

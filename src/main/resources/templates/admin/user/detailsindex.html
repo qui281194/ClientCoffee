@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="/admin/layout">
+    <head>
+        <title>Admin | Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/admin/dist/css/user/create.css}">
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="content-wrapper" style="min-height: 1302.4px;">
+                <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+                     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+                    <div class="page-wrapper" style="min-height: 250px;">
+                        <div class="container-fluid">
+                            <!-- ============================================================== -->
+                            <!-- Start Page Content -->
+                            <!-- ============================================================== -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="white-box">
+                                         <h1>User Details</h1>
+                                        <div class="form-container">
+                                           
+                                            <div class="form-half">
+                                                
+                                                <div class="form-group">
+                                                    <label for="name">Name:</label>
+                                                    <span th:text="${userDetails.username}"></span>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <span th:text="${userDetails.email}"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phone">Phone:</label>
+                                                    <span th:text="${userDetails.phone}"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="role">Role:</label>
+                                                    <span th:text="${userDetails.roleInfo.role_name}"></span>
+                                                </div>
+
+
+
+                                                <!-- Add other user details here -->
+                                            </div>
+                                            <div class="form-half">
+                                                <div class="form-group">
+                                                    <label for="address">Address:</label>
+                                                    <span th:text="${userDetails.address}"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="status">Status:</label>
+                                                    <span th:text="${userDetails.status}"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="gender">Gender:</label>
+                                                    <span th:text="${userDetails.gender}"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="birthday">BirThday:</label>
+                                                    <span th:text="${userDetails.birthday}"></span>
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                         <a th:href="@{/admin/user/all}" style="float: right;" class="btn btn-primary">Back to Index</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- End Page Content -->
+                            <!-- ============================================================== -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sign Up Form by Colorlib</title>
+
+        <!-- Font Icon -->
+        <link rel="stylesheet" th:href="@{register/fonts/material-icon/css/material-design-iconic-font.min.css}">
+
+        <!-- Main css -->
+        <link rel="stylesheet" th:href="@{register/css/style.css}">
+        
+    </head>
+    <body>
+
+        <div class="main">
+
+            <section class="signup">
+                <!-- <img src="images/signup-bg.jpg" alt=""> -->
+                <div class="container">
+                    <div class="signup-content">
+                        <!-- success message  -->
+                        <div th:if="${param.success}">
+                            <div class="alert alert-info" style="background-color: #4dff4d; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;"> You are successfull registered to our awsome app!</div>
+                        </div>
+                        <div th:if="${param.emailexist}" style="background-color: #f44336; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                                <div class="alert alert-info"> You email have exist please register other email</div>
+                            </div>
+                       
+                        <form method="POST" id="signup-form" class="signup-form" th:action="@{/register}" th:object="${newUser}">
+                            <h2 class="form-title">Create account</h2>
+                            <div class="form-group">
+                                <input type="text" class="form-input" th:field="*{username}" placeholder="Your Name"/>
+                            </div>
+                            <div th:if="${param.name}" style="background-color: #f44336; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                                <div class="alert alert-info"> Name cannot be left blank!</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" th:field="*{email}" placeholder="Your Email"/>
+                            </div>
+                            
+                            <div th:if="${param.email}" style="background-color: #f44336; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                                <div class="alert alert-info"> Email cannot be left blank!!</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" th:field="*{password}" placeholder="Password"/>
+                                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            </div>
+                            <div th:if="${param.password}" style="background-color: #f44336; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                                <div class="alert alert-info"> Password cannot be left blank!!</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" th:field="*{repeatpassword}" placeholder="Repeat your password"/>
+                            </div>
+                            <div th:if="${param.repeatpassword}" style="background-color: #f44336; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                                <div class="alert alert-info"> You password and checkpass not same ! Please  checkout it!</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                            </div>
+                        </form>
+                        <p class="loginhere">
+                            Have already an account ? <a th:href="@{/login}" class="loginhere-link">Login here</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- JS -->
+        <script th:src="@{register/vendor/jquery/jquery.min.js}"></script>
+        <script th:src="@{register/js/main.js}"></script>
+    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="/admin/layout">
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin | Edit</title>
+         <link rel="stylesheet" th:href="@{/admin/dist/css/user/create.css}">
+    </head>
+    <body>
+
+        <div layout:fragment="content">
+            <div class="content-wrapper" style="min-height: 1302.4px;">
+                <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+                     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+                    <div class="page-wrapper" style="min-height: 250px;">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="white-box">
+                                        <form th:action="@{/admin/user/edit/{id}(id=${userDto.id})}" method="post" th:object="${userDto}">
+                                            <div class="form-container">
+                                                <div class="form-half">
+
+                                                    <label for="name">Username:</label>
+                                                    <input type="text" id="name" th:field="*{username}">
+
+
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" id="email" th:field="*{email}">
+
+
+                                                    <label for="status">Status:</label>
+                                                    <input type="text" id="status" th:field="*{status}">
+
+
+                                                    <label for="address">Address:</label>
+                                                    <input type="text" id="address" th:field="*{address}">
+                                                </div>
+                                                <div class="form-half">
+                                                    <label for="phone">Phone:</label>
+                                                    <input type="text" id="phone" th:field="*{phone}">
+
+
+                                                    <label for="gender">Gender:</label>
+                                                    <input type="text" id="gender" th:field="*{gender}">
+
+
+                                                    <label for="birthday">Birthday:</label>
+                                                    <input type="date" id="birthday" th:field="*{birthday}">
+
+                                                    <div class="form-group">
+                                                        <label for="role">Role:</label>
+                                                        <select id="role" th:field="*{role_id}" class="form-control" required>
+                                                            <option value="1">Admin</option>
+                                                            <option value="2">Employee</option>
+                                                            <option value="3">User</option>
+                                                        </select>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                </div>
+
+                                                <!-- Add fields for other user information -->
+
+                                                
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

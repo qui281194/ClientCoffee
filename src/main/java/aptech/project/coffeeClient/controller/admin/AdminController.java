@@ -195,5 +195,43 @@ public class AdminController {
             return "redirect:/admin/user/edit/" + id;
         }
     }
+    @GetMapping("/search")
+public String searchByUsername(
+        @RequestParam(name = "username", required = false) String username,
+        @RequestParam(defaultValue = "1") Integer pageNo,
+        Model model
+) {
+    // Kiểm tra xem người dùng đã nhập từ khóa tìm kiếm hay không
+    if (username == null || username.isEmpty()) {
+        // Nếu không nhập, chuyển hướng về trang ban đầu
+        return "redirect:/admin/user/all";
+    }
+
+    ResponseEntity<PageDto<UserDto>> response = rest.exchange(
+            apiUrl + "search?username=" + username + "&pageNo=" + pageNo,
+            HttpMethod.GET,
+            null,
+            new ParameterizedTypeReference<PageDto<UserDto>>() {
+            }
+    );
+
+    if (response.getStatusCode() == HttpStatus.OK) {
+        PageDto<UserDto> pageDto = response.getBody();
+        model.addAttribute("users", pageDto.getContent());
+        model.addAttribute("totalPages", pageDto.getTotalPages());
+        model.addAttribute("totalElements", pageDto.getTotalElements());
+        model.addAttribute("currentPage", pageNo);
+        // Calculate page numbers
+        List<Integer> pageNumbers = IntStream.rangeClosed(1, pageDto.getTotalPages()).boxed().collect(Collectors.toList());
+        model.addAttribute("pageNumbers", pageNumbers);
+
+        return "admin/user/index"; // Trả về view để hiển thị kết quả tìm kiếm
+    } else {
+        // Handle error here
+        return "error";
+    }
+}
+
+
 
 }

@@ -165,13 +165,12 @@
                                     <div class="white-box">
                                         <!-- Modal for creating a new user -->
                                         <a th:href="@{/admin/user/create}" class="btn btn-primary">Create New User</a>
-                                        <form class="search-form" th:action="@{'/admin/servicedv/search'}" method="get">
-
-                                            <label for="searchName"></label>
-                                            <input type="text" id="searchName" name="name" placeholder="Search by Name" />
-
+                                        <form class="search-form" th:action="@{'/admin/user/search'}" method="get">
+                                            <label for="searchName">Search by Username:</label>
+                                            <input type="text" id="searchName" name="username" placeholder="Enter username" />
                                             <button class="btn btn-primary" type="submit">Search</button>
                                         </form>
+
 
 
 

@@ -120,18 +120,16 @@ public class LoginController {
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
                 // Đăng ký thành công
                 return "redirect:/register?success";
-            } else if (responseEntity.getStatusCode() == HttpStatus.CONFLICT) {
-                // Email đã tồn tại
-                return "redirect:/register?emailexist";
-            } else {
+            } 
+             else {
                 // Xử lý lỗi chung
-                model.addAttribute("error", "An error occurred");
-                return "/admin/login/register";
+               
+                return "redirect:/register?emailexist";
             }
-        } catch (HttpClientErrorException ex) {
+        } catch (Exception ex) {
             // Xử lý lỗi từ API
-            model.addAttribute("error", "An error occurred: " + ex.getMessage());
-            return "/admin/login/register";
+           
+            return "redirect:/register?emailexist";
         }
     }
     

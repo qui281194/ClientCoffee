@@ -21,7 +21,7 @@
                                         <h2 class="box-title">Create User </h2>
                                         <!-- Create User Form -->
                                         <div th:if="${param.email}">
-                                                        <div class="alert alert-info" style="background-color: #4dff4d; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;"> email đã ttoonf tại!</div>
+                                                        <div class="alert alert-info" style="background-color: #4dff4d; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;"> You email have exist please register other email!</div>
                                                     </div>
                                         <form th:action="@{/admin/user/create}" method="post" th:object="${userDto}" >
                                             <div class="form-container">

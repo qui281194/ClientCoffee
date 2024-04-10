@@ -8,6 +8,7 @@ import aptech.project.coffeeClient.dto.LoginDto;
 import aptech.project.coffeeClient.dto.PageDto;
 import aptech.project.coffeeClient.dto.UserDto;
 import aptech.project.coffeeClient.models.User;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -132,6 +133,49 @@ public class LoginController {
             return "redirect:/register?emailexist";
         }
     }
+     @GetMapping("/change-password")
+    public String changepassword(Model model) {
+        model.addAttribute("user", new UserDto());
+        return "/admin/user/change-pasword";
+    }
+    @PostMapping("/change-password")
+public String changePassword(@ModelAttribute("user") UserDto userDto,
+        @RequestParam String currentPassword,
+        @RequestParam String newPassword,
+        Model model) {
+    try {
+        // Tạo Map chứa thông tin cần thiết
+       HashMap<String, String> requestMap = new HashMap<>();
+        requestMap.put("email", userDto.getEmail());
+        requestMap.put("currentPassword", currentPassword);
+        requestMap.put("newPassword", newPassword);
+
+        // Gọi API change-password
+        ResponseEntity<String> responseEntity = rest.postForEntity(
+                apiUrl + "change-password",
+                requestMap,
+                String.class
+        );
+
+        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+            // Thay đổi mật khẩu thành công
+            return "redirect:/change-password?success";
+        } else {
+            // Xử lý lỗi thất bại khi thay đổi mật khẩu
+            model.addAttribute("error", "Failed to change password");
+            return "/admin/user/change-pasword";
+        }
+    } catch (HttpClientErrorException ex) {
+        // Xử lý lỗi từ API
+        model.addAttribute("error", ex.getMessage());
+        return "/admin/user/change-pasword";
+    } catch (Exception ex) {
+        // Xử lý lỗi chung
+        model.addAttribute("error", "An error occurred");
+        return "/admin/user/change-pasword";
+    }
+}
+
     
 
 }

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="/admin/layout">
     <head>
+        <title>Admin | Category - Home</title>
         <meta charset="UTF-8">
-        <title>Admin | List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/admin/dist/css/user/index.css}">
-
     </head>
     <body>
         <div layout:fragment="content">
@@ -26,37 +30,23 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="white-box">
-                                        <!-- Modal for creating a new user -->
-                                        <a th:href="@{/admin/user/create}" class="btn btn-primary">Create New User</a>
-                                        <form class="search-form" th:action="@{'/admin/user/search'}" method="get">
-                                            <label for="searchName">Search by Username:</label>
-                                            <input type="text" id="searchName" name="username" placeholder="Enter username" />
-                                            <button class="btn btn-primary" type="submit">Search</button>
-                                        </form>
-
-
-
-
-                                        <h2 class="my-4">User List</h2>                                                                                                                   
+                                        <h4 th:text="${msg}"></h4>
+                                        <a th:href="@{/admin/category/create}" class="btn btn-primary">Create New Category</a>
+                                        <h2 class="my-4">Category List</h2>                                                                                                                   
                                         <table class="table table-bordered">
                                             <thead class="thead-dark">
                                                 <tr>
-                                                    <th>Username</th>
-
-                                                    <th>Email</th>
-
-                                                    <th>Role</th>
-                                                    <th>Status</th>
+                                                    <th>Id</th>
+                                                    <th>Name</th>                                                  
                                                     <th>Acction</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr th:each="u : ${users}">
-                                                    <td th:text="${u.username}"></td>
+                                                <tr th:each="u : ${category}">
+                                                    <td th:text="${u.id}"></td>
 
-                                                    <td th:text="${u.email}"></td>
-                                                    <td th:text="${u.roleInfo.role_name}"></td>
-                                                    <td th:text="${u.status ? 'Active' : 'Inactive'}"></td>
+                                                    <td th:text="${u.name}"></td>
+                                                    
                                                     <td>
                                                         <a th:href="@{'/admin/user/detailsById/' + ${u.id}}" class="btn btn-secondary">
                                                             <i  class="fa fa-eye"></i>
@@ -84,41 +74,14 @@
                                                 </li>
                                             </ul>
                                         </div>
-
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Lắng nghe sự kiện click trên nút "Toggle"
-            var toggleButtons = document.querySelectorAll('.toggle-btn');
-            toggleButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Tìm hàng chứa nút được nhấn
-                    var row = button.closest('.user-row');
-                    // Kiểm tra trạng thái hiện tại của hàng
-                    var isHidden = row.classList.contains('hidden-row');
-                    // Thay đổi trạng thái của hàng
-                    if (isHidden) {
-                        row.classList.remove('hidden-row');
-                    } else {
-                        row.classList.add('hidden-row');
-                    }
-                });
-            });
-        });
-    </script>
-
-
-
-
-
 </html>

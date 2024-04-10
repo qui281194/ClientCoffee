@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="/admin/layout">
+    <head>
+        <title>Admin | Create</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div layout:fragment="content">
+
+
+
+            <!-- Button to trigger the modal -->
+
+            <div class="content-wrapper" style="min-height: 1302.4px;">
+                <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+                     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+                    <div class="page-wrapper" style="min-height: 250px;">
+                        <div class="container-fluid">
+
+
+                            <!-- ============================================================== -->
+                            <!-- Start Page Content -->
+                            <!-- ============================================================== -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="white-box">
+                                        <!-- Form để tạo mới category -->
+                                        <form th:action="@{/admin/category/create}" th:object="${category}" method="post">
+                                            <div class="form-group">
+                                                <label for="name">Name:</label>
+                                                <!-- Input để nhập tên category -->
+                                                <input type="text" th:field="*{name}" id="name" name="name" class="form-control"/>
+                                            </div>
+                                            <!-- Nút submit để gửi form -->
+                                            <button type="submit" class="btn btn-primary">Create</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
